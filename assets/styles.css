@@ -5,3 +5,12 @@
 ul {
     list-style-type: none;
 }
+
+#forecast-cards {
+    justify-content: space-around;
+}
+
+.card-content {
+    margin: 30px;
+
+}
