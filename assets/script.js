@@ -1,13 +1,17 @@
 // DOM elements to display on page 
-var searchForm = document.querySelector("#user-form");
+
+// current city DOM
+var searchButton = document.querySelector("#user-form");
 var cityInputEl = document.querySelector('#city-input');
-var fiveDayEl = document.querySelector('#forecast-cards');
 var currentWeather = document.querySelector('#current-weather');
-var lastSearchEl = document.querySelector('#city-search-list')
+var lastSearchEl = document.querySelector('#city-search-list');
+
+// 5 day DOM
+var fiveDayEl = document.querySelector('#forecast-cards');
 
 var currentCity = "";
 var cityArray = [];
-var weatherObj = [];
+var getCityWeatherObj = [];
 
 
 // requesting One Call API
@@ -46,13 +50,45 @@ var searchCity = function (event) {
     }
 }
 
-// search button 
-searchForm.addEventListener("submit", searchCity)
 
 // Latitude and longitude for each city 
-var apiURL = 
+// var apiURL = 
 
-// Displaying current weather data 
-var displayWeather = 
+// // Displaying current weather data 
+// var displayCurrent = 
 
 // 5 day forecast 
+// 
+
+// Displaying 5 day forecast 
+var displayForecast = function () {
+    fiveDayEl.textContent = '';
+}
+
+// Displaying search history 
+var historyArray = function () {
+    cityArray = json.parse(localStorage.getItem("previousCity"));
+    displayHistory();
+};
+
+var displayHistory = function () {
+    lastSearchEl.innerHTML = "";
+
+    for (var i=0; i < cityArray.length; i++) {
+        var cityList = document.createElement("li");
+        cityList.classList = "list-group-item";
+        cityList.textContent = cityArray[i].cityName; 
+    }
+}; 
+
+var historyClick = function (event) {
+    event.preventDefault();
+
+
+}
+
+// click on previously search city 
+lastSearchEl. addEventListener("click", historyClick);
+
+// search button 
+searchButton.addEventListener("submit", searchCity);
