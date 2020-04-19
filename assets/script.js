@@ -19,7 +19,6 @@ var fiveDayEl = document.querySelector("#forecast-cards");
 var currentCity = "";
 var cityArray = [];
 
-
 // requesting Current Weather API
 var getCityWeather = function(city) {
     var apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + key;
@@ -57,35 +56,70 @@ var formSubmitHandler = function(event) {
 
 // Displaying current weather data 
 var displayCityWeather = function(city, searchTerm) {
+    // clear old content 
+    cityContainerEl.textContent = '';
+    citySearchTerm.textContent = searchTerm;
+
     var displayCurrentDate = document.querySelector("#city-current-date");
     var currentDate = moment();
     displayCurrentDate.textContent = currentDate.format("(MMMM Do YYYY)");
 
-    // clear old content 
-    cityContainerEl.textContent = '';
-    citySearchTerm.textContent = searchTerm;
+    // // weather icon 
+    // var currentIcon = document.querySelector("#city-current-icon");
+
+    // temperature 
+    var displayTemp = document.querySelector("#temp-input");
+    var currentTemp = city.main.temp + " °F";
+    displayTemp.textContent = currentTemp; 
+
+    // humidity
+    var displayHumidity = document.querySelector("#humidity-input");
+    var currentHumidity = city.main.humidity + "%";
+    displayHumidity.textContent = currentHumidity; 
+
+    // wind speed 
+    var displayWind = document.querySelector("#wind-input");
+    var currentWind = city.wind.speed + " MPH";
+    displayWind.textContent = currentWind;
+
+    // uv index 
+    lon = city.coord.lon; 
+    lat = city.coord.lat; 
+
+    var displayUv = document.querySelector("uv-input"); 
+    var currentUv = getUvIndex();
+    displayUv.textContent = currentUv; 
+
 };
 
+// 5 day forecast API 
+var getForecast = function(city) {
+    var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=" + key;
 
-// Latitude and longitude for each city 
-// var apiURL = 
+    // if response was successful 
+    fetch(forecastURL).then(function(response) {
+        if (response.ok) {
+            response.json().then(function(data) {
+                displayCityWeather(data, city);
+            });
+        } else {
+            alert("Error:" + response.statusText);
+        }
+    })
+    // if network error 
+    .catch(function(error) {
+        alert("Unable to connect to Open Weather");
+    })
+};
 
+// Displaying 5 day forecast   
+// displayForcast = function () { 
+//     fiveDayEl.textContent = ''; 
+    
+//     for (var i=1; i<=5; i++) {
 
-// 5 day forecast 
-// 
-
-// Displaying 5 day forecast 
-// Day 1 
-// var date1El = document.querySelector("#date-1")
-//     date1El.innerHTML = 
-
-// Day 2
-
-// Day 3
-
-// Day 4 
-
-//
+//     }
+// }; 
 
 // // Displaying search history 
 // var historyArray = function () {
