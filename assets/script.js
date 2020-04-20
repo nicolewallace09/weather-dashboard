@@ -36,7 +36,7 @@ var formSubmitHandler = function(event) {
 // // clicking on previous searched city
 var clickHandler = function (event) {
 
-    var clickCity = event.target.textContent;
+    var clickCity = event.currentTarget.textContent;
 
     getCityWeather(clickCity);
     getForecast(clickCity);
@@ -113,6 +113,13 @@ var displayCityWeather = function(city, searchTerm) {
     var displayWind = document.querySelector("#wind-input");
     var currentWind = city.wind.speed + " MPH";
     displayWind.textContent = currentWind;
+
+    // display list items
+    var newCityEl = document.createElement("li");
+    newCityEl.className = "list-group-item";
+    newCityEl.textContent = searchTerm;
+    newCityEl.addEventListener("click", clickHandler);
+    previousCityEl.appendChild(newCityEl);
 
      // for uv index 
      var lon = city.coord.lon; 
@@ -218,41 +225,6 @@ var displayForecast = function (list) {
 
         }
 }; 
-
-// // save searches to local storage 
-// var saveCitySearch = function (city) {
-//     var cityEl = document.createElement("li");
-//     cityEl.innerText = city;
-//     cityEl.classList = "list-group-item";
-//     previousCityEl.appendChild(cityEl);
-
-//     cityArray.push(city);
-
-//     localStorage.setItem("city", JSON.stringify(cityArray));
-// }
-
-// // //  get items in local storage
-// var loadCity = function () {
-//     var storedCityName = localStorage.getItem('city');
-    
-//     if(!storedCityName) {
-//         return false; 
-//     };
-
-//     storedCity = json.parse(storedCityName);
-
-//     for (i = 0; i < cityArray.length; i++) {
-//         var cityEl = document.createElement("li")
-//         cityEl.innerText = storedCity[i];
-//         cityEl.classList = "list-group-item";
-//         previousCityEl.appendChild(cityEl);
-        
-//     }
-// };
-
-
-// // // click on previously searched city 
-// previousCityEl.addEventListener("click", clickHandler);
 
 // search button 
 userFormEl.addEventListener("submit", formSubmitHandler);
