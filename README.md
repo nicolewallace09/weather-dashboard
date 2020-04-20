@@ -10,6 +10,7 @@ When viewing future weather conditions, there is a 5-day forecast that displays 
 When a city in the search history is clicked, then it goes to the weather dashboard.<br>
 
 # Screenshot
+<img src="assets/images/weather-img.png">
 
 # URLS 
 Github URL
