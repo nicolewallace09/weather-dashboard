@@ -1,20 +1,34 @@
-# weather-dashboard
-Use server-side API's to create a weather dashboard 
 
-# Criteria 
-Weather dashboard with form inputs</br>
-When searching for a city, user is presented with current & future weather conditions then added to search history<br>
-When viewing current weather conditions, user is presented with the city name, date, an icon of weather, temperature, humidity, wind speed, and UV index<br>
-User is presented with color that indicates if conditions are favorable, moderate, or severe<br>
-When viewing future weather conditions, there is a 5-day forecast that displays the date, an icon, temperature, and humidity.<br>
-When a city in the search history is clicked, then it goes to the weather dashboard.<br>
+# Weather Dashboard
+![Github licence](http://img.shields.io/badge/license-MIT-blue.svg)
 
-# Screenshot
+## Description 
+This application uses server-side API and JavaScript to create a weather dashboard.
+
+## Table of Contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
+
+## Installation 
+This does not require installation. 
+
+## Usage 
+The usage of this application should only be to view my portfolio.<br>
+Please view live Git Hub [URL](https://nicolewallace09.github.io/weather-dashboard/)<br>
 <img src="assets/images/weather-img.png">
 
-# URLS 
-Github URL
-https://github.com/nicolewallace09/weather-dashboard
+## License 
+This project is license under MIT
 
-Live URL 
-https://nicolewallace09.github.io/weather-dashboard/
+## Contributing 
+Contributors should read the installation section. 
+
+## Tests
+There are no tests for this application. 
+
+## Questions
+If you have any questions about this projects, please contact me directly at nicole.elisaw@gmail.com. You can view more of my projects at https://github.com/nicolewallace09.
