@@ -11,30 +11,30 @@
   <title>Weather Dashboard</title>
 </head>
 
-<body class="flex-column min-100-vh">
-  <header class="hero">
-    <h1 class="section-title bg-dark text-white text-center">Weather Dashboard</h1>
-  </header>
+<body>
+  <!-- <header class="hero">
+    <h1 class="section-title text-white text-center">Weather Dashboard</h1>
+  </header> -->
 
 
-<div class="container-fluid">
+<div class="weather-container container">
 
 <!-- Search bar -->
     <div class="row">
-        <div class="col-4">
+        <div class="col-4 col-xs-12">
             <div class="card bg-light">
-            <h3>Search for a city:</h3>
+            <h3 class="search">Enter a city:</h3>
             <form id="user-form" class="card-body">
                 <label class="form-label" for="city"></label>
-                <input name="city-input" id="city-input" type="text" autofocus="true" class="form-input" />
-                <button type="submit" class="btn btn-primary"><span class="oi oi-magnifying-glass"></span></button>
+                <input name="city-input" size="30" id="city-input" type="text" autofocus="true" class="form-input" />
+                <button type="submit" class="btn btn-primary btn-md">Search</button>
             </form>
             <ul class="list-group" id="search-container"></ul>
         </div>
     </div>
 
 <!-- City card -->
-        <div class="col-7">
+        <div class="col-8">
             <div class="card">
                 <div class="current-weather">
                 <h2 class="subtitle"><span id="city-search-term">Search for a city to view weather</span>

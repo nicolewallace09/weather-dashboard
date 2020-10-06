@@ -44,7 +44,7 @@ var clickHandler = function (event) {
 
 // requesting Current Weather API
 var getCityWeather = function(city) {
-    var apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + key;
+    var apiURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + key;
 
     // if response was successful 
     fetch(apiURL).then(function(response) {
@@ -147,7 +147,7 @@ var displayCurrentUv = function(data) {
    
 // 5 day forecast API 
 var getForecast = function(city) {
-    var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&cnt=6&appid=" + key;
+    var forecastURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&cnt=6&appid=" + key;
 
     // if response was successful 
     fetch(forecastURL).then(function(response) {
